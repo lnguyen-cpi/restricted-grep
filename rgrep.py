@@ -103,9 +103,9 @@ def rgrep_matches(input_file, pattern):
 	text_file = open(input_file, 'r') #input source file.
 	tosearch = text_file.readline() #grab the first line
 
-	# Iterates through the search line, starting the search pattern at a new
-	# starting character each time.
-	while (tosearch != ""):
+	
+	while (tosearch != ""): #checks each line in text file.
+		# Starts search pattern at next char in search line
 		for i in range(len(tosearch)):
 			if control(tosearch[i:], pattern):
 				print(tosearch)
