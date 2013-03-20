@@ -76,7 +76,7 @@ def control(tosearch, pattern):
 
 
 
-def rgrep_matches(tosearch, pattern):
+def rgrep_matches(input_file, pattern):
 	""" A restriced implementation of grep. Checks if pattern (type: string) is
 		a substring of tosearch (type: string).
 
@@ -97,16 +97,21 @@ def rgrep_matches(tosearch, pattern):
 
 	"""
 
+
+
+	text_file = open(input_file, 'r') #input source file.
+	tosearch = text_file.readline() #grab the first line
+
 	# Iterates through the search line, starting the search pattern at a new
 	# starting character each time.
-	temp = tosearch
-	for i in range(len(tosearch)):
-		if control(tosearch[i:], pattern):
-			return temp
-	return False
+	while (tosearch != ""):
+		for i in range(len(tosearch)):
+			if control(tosearch[i:], pattern):
+				print(tosearch)
+		tosearch = text_file.readline()
 
 
 if __name__ == "__main__":
-	line_to_search = sys.argv[1]
+	input_file = sys.argv[1]
 	pattern = sys.argv[2]
-	rgrep_matches(line_to_search, pattern)
+	rgrep_matches(input_file, pattern)
