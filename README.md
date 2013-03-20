@@ -11,7 +11,7 @@ All other characters have no special values.
 Usage
 -----
 From the command line:
->>> python3 rgrep.py "input.txt" "pattern"
+> python3 rgrep.py "input.txt" "pattern"
 
 Where input.txt is a string representing the path to the .txt file you wish
 to search, and pattern is the limited regex you wish to use.
