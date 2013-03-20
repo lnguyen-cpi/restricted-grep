@@ -37,7 +37,8 @@ def control(tosearch, pattern):
 	
 	"""
 
-	# We've matched all characters in the pattern, or the other character in the pattern doesn't have to appear so return true.
+	# We've matched all characters in the pattern, or the other character in the pattern doesn't have 
+	#to appear so return true.
 	if pattern == "":
 		return True
 	# The pattern substring wasn't found in the line, so return false.
